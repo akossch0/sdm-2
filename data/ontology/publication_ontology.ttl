@@ -59,6 +59,11 @@ pub:Workshop a rdfs:Class ;
     rdfs:label "Workshop" ;
     rdfs:subClassOf pub:JointMeeting .
 
+pub:abstract a rdf:Property ;
+    rdfs:label "abstract" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range xsd:string .
+
 pub:cite a rdf:Property ;
     rdfs:label "cite" ;
     rdfs:domain pub:Paper ;
@@ -104,6 +109,11 @@ pub:hasVolume a rdf:Property ;
     rdfs:domain pub:Journal ;
     rdfs:range pub:Volume .
 
+pub:name a rdf:Property ;
+    rdfs:label "name" ;
+    rdfs:domain pub:Author ;
+    rdfs:range xsd:string .
+
 pub:publishedIn a rdf:Property ;
     rdfs:label "published in" ;
     rdfs:domain pub:Paper ;
@@ -113,6 +123,11 @@ pub:startDate a rdf:Property ;
     rdfs:label "start date" ;
     rdfs:domain pub:Edition ;
     rdfs:range xsd:date .
+
+pub:title a rdf:Property ;
+    rdfs:label "title" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range xsd:string .
 
 pub:venue a rdf:Property ;
     rdfs:label "venue" ;

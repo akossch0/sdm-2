@@ -183,9 +183,29 @@ g.add((venue, RDFS.domain, edition))
 g.add((venue, RDFS.range, XSD.string))
 g.add((venue, RDFS.label, Literal("venue")))
 
+# Additional datatype properties for papers and authors
+title = PUB.title
+g.add((title, RDF.type, RDF.Property))
+g.add((title, RDFS.domain, paper))
+g.add((title, RDFS.range, XSD.string))
+g.add((title, RDFS.label, Literal("title")))
+
+abstract = PUB.abstract
+g.add((abstract, RDF.type, RDF.Property))
+g.add((abstract, RDFS.domain, paper))
+g.add((abstract, RDFS.range, XSD.string))
+g.add((abstract, RDFS.label, Literal("abstract")))
+
+name = PUB.name
+g.add((name, RDF.type, RDF.Property))
+g.add((name, RDFS.domain, author))
+g.add((name, RDFS.range, XSD.string))
+g.add((name, RDFS.label, Literal("name")))
+
 # ensure data folder exists
 os.makedirs("data", exist_ok=True)
-output_file = "data/publication_ontology.ttl"
+os.makedirs("data/ontology", exist_ok=True)
+output_file = "data/ontology/publication_ontology.ttl"
 g.serialize(destination=output_file, format="turtle")
 
 print(f"Ontology TBOX created and saved to '{output_file}'")
