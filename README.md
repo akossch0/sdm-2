@@ -1,6 +1,6 @@
-# sdm-2
+# SDM-2 - Knowledge Graphs
 
-# Setup
+## Setup
 
 Create python virtual environment
 
@@ -19,3 +19,7 @@ Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
+
+## Graph representation of the TBOX
+
+![Publication Ontology Graph](data/pub-ontology.png)
