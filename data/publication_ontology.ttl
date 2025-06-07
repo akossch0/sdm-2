@@ -1,0 +1,131 @@
+@prefix pub: <http://example.org/publication-ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pub:Author a rdfs:Class ;
+    rdfs:label "Author" .
+
+pub:Conference a rdfs:Class ;
+    rdfs:label "Conference" ;
+    rdfs:subClassOf pub:JointMeeting .
+
+pub:CorrAuthor a rdfs:Class ;
+    rdfs:label "Corresponding Author" ;
+    rdfs:subClassOf pub:Author .
+
+pub:Edition a rdfs:Class ;
+    rdfs:label "Edition" ;
+    rdfs:subClassOf pub:PublicationIssue .
+
+pub:JointMeeting a rdfs:Class ;
+    rdfs:label "Joint Meeting" ;
+    rdfs:subClassOf pub:PublicationPlace .
+
+pub:Journal a rdfs:Class ;
+    rdfs:label "Journal" ;
+    rdfs:subClassOf pub:PublicationPlace .
+
+pub:Paper a rdfs:Class ;
+    rdfs:label "Paper" ;
+    rdfs:comment "A research paper or article." .
+
+pub:PublicationIssue a rdfs:Class ;
+    rdfs:label "Publication Issue" ;
+    rdfs:comment "A specific instance of a publication, like an edition or volume." .
+
+pub:PublicationPlace a rdfs:Class ;
+    rdfs:label "Publication Place" ;
+    rdfs:comment "A generic place for publishing papers, e.g., a conference or journal." .
+
+pub:Review a rdfs:Class ;
+    rdfs:label "Review" ;
+    rdfs:comment "A review of a submitted paper." .
+
+pub:Reviewer a rdfs:Class ;
+    rdfs:label "Reviewer" ;
+    rdfs:comment "A person who reviews a paper." ;
+    rdfs:subClassOf pub:Author .
+
+pub:Topic a rdfs:Class ;
+    rdfs:label "Topic" ;
+    rdfs:comment "A keyword or topic describing the subject of a paper." .
+
+pub:Volume a rdfs:Class ;
+    rdfs:label "Volume" ;
+    rdfs:subClassOf pub:PublicationIssue .
+
+pub:Workshop a rdfs:Class ;
+    rdfs:label "Workshop" ;
+    rdfs:subClassOf pub:JointMeeting .
+
+pub:cite a rdf:Property ;
+    rdfs:label "cite" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:Paper .
+
+pub:endDate a rdf:Property ;
+    rdfs:label "end date" ;
+    rdfs:domain pub:Edition ;
+    rdfs:range xsd:date .
+
+pub:hasAuthor a rdf:Property ;
+    rdfs:label "has author" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:Author .
+
+pub:hasCorrAuthor a rdf:Property ;
+    rdfs:label "has corresponding author" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:CorrAuthor .
+
+pub:hasEdition a rdf:Property ;
+    rdfs:label "has edition" ;
+    rdfs:domain pub:Conference ;
+    rdfs:range pub:Edition .
+
+pub:hasKeyword a rdf:Property ;
+    rdfs:label "has keyword" ;
+    rdfs:domain pub:Topic ;
+    rdfs:range xsd:string .
+
+pub:hasReview a rdf:Property ;
+    rdfs:label "has review" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:Review .
+
+pub:hasTopic a rdf:Property ;
+    rdfs:label "has topic" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:Topic .
+
+pub:hasVolume a rdf:Property ;
+    rdfs:label "has volume" ;
+    rdfs:domain pub:Journal ;
+    rdfs:range pub:Volume .
+
+pub:publishedIn a rdf:Property ;
+    rdfs:label "published in" ;
+    rdfs:domain pub:Paper ;
+    rdfs:range pub:PublicationIssue .
+
+pub:startDate a rdf:Property ;
+    rdfs:label "start date" ;
+    rdfs:domain pub:Edition ;
+    rdfs:range xsd:date .
+
+pub:venue a rdf:Property ;
+    rdfs:label "venue" ;
+    rdfs:domain pub:Edition ;
+    rdfs:range xsd:string .
+
+pub:writtenBy a rdf:Property ;
+    rdfs:label "written by" ;
+    rdfs:domain pub:Review ;
+    rdfs:range pub:Reviewer .
+
+pub:year a rdf:Property ;
+    rdfs:label "year" ;
+    rdfs:domain pub:PublicationIssue ;
+    rdfs:range xsd:int .
+
