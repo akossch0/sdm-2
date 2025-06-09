@@ -143,4 +143,3 @@ pub:year a rdf:Property ;
     rdfs:label "year" ;
     rdfs:domain pub:PublicationIssue ;
     rdfs:range xsd:int .
-
