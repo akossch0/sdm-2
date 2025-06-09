@@ -4,7 +4,7 @@ from collections import Counter
 
 # Load the knowledge graph
 g = Graph()
-g.parse("data/ontology/publication_abox.ttl", format="turtle")
+g.parse("data/ontology/dreamteam-b2-AkosSchneider_DinaraKurmangaliyeva.ttl", format="turtle")
 
 PUB = Namespace("http://example.org/publication-ontology#")
 
