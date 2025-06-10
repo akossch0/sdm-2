@@ -44,7 +44,7 @@ for config in models_to_run:
     "Model": config["model"],
     "Embedding Dim": config["embedding_dim"],
     "Neg Samples": config["neg"],
-    "MRR": round(metrics.get("both.realistic.mean_reciprocal_rank", 0), 4),
+    "MRR": round(metrics.get("both.realistic.inverse_harmonic_mean_rank", 0), 4),
     "Hits@1": round(metrics.get("both.realistic.hits_at_1", 0), 4),
     "Hits@10": round(metrics.get("both.realistic.hits_at_10", 0), 4),
 })
