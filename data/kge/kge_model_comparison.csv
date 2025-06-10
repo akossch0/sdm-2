@@ -1,0 +1,8 @@
+Model,Embedding Dim,Neg Samples,MRR,Hits@1,Hits@10
+TransE,50,5,0,0.0083,0.0974
+TransE,100,15,0,0.0048,0.0942
+TransE,200,25,0,0.0002,0.0845
+TransH,50,5,0,0.0295,0.1072
+TransH,100,25,0,0.012,0.0766
+ComplEx,150,15,0,0.0047,0.0435
+DistMult,100,20,0,0.0217,0.032
